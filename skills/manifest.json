@@ -1,0 +1,9 @@
+{
+  "bundle_version": "0.2.0",
+  "skills": [
+    {
+      "name": "blender-lighting",
+      "version": "0.2.0"
+    }
+  ]
+}

@@ -1,0 +1,650 @@
+{
+  "plugin_version": "0.2.1",
+  "cli_version": "0.57.0",
+  "skill_version": "0.2.0",
+  "implementation_sha256": "6736923ee41f64392c3217336d9d34849bc0ad5e5b1269604574d5568d28dbb8",
+  "runtime_documents": [
+    {
+      "file": "tools/blenderctl/adaptive_sampling.py",
+      "expected_sha256": "f148577f5f771db1a6ccd2102382ecae2d4370882379285dfdfedf3fbd17b220"
+    },
+    {
+      "file": "tools/blenderctl/asset_contract.py",
+      "expected_sha256": "e3a1273d94296a9afa791537ed0ccd40d98d2d42893b79459b27c916d12cf1d8"
+    },
+    {
+      "file": "tools/blenderctl/asset_previews.py",
+      "expected_sha256": "53b13bdc964935ff077631bd009923d3ec699cdc61968d5c69b4b3c010a0a51c"
+    },
+    {
+      "file": "tools/blenderctl/asset_validation.py",
+      "expected_sha256": "047db68732534da4217c01106f95ec5481da0203aceb0474ae0f779d67d65be7"
+    },
+    {
+      "file": "tools/blenderctl/assets.py",
+      "expected_sha256": "15ce8e4f4c25688c1c861e7bedd0b7f48bfd5f67c2abf8995b300b441e70e1a1"
+    },
+    {
+      "file": "tools/blenderctl/bootstrap.py",
+      "expected_sha256": "e91f623858909bed006f70cbe0b09f25acd946dfad388aabe526b11f0d83366e"
+    },
+    {
+      "file": "tools/blenderctl/cli.py",
+      "expected_sha256": "f63bc950dfb8fe9be9ad9b934a7a29853b36a4fb0e6dbdbd213fef382a7dc8c3"
+    },
+    {
+      "file": "tools/blenderctl/curve_contract.py",
+      "expected_sha256": "bf4289b0cbd21861d08679eab56b9f6a7d51330eed355e5c54a69bfa05a1e0c1"
+    },
+    {
+      "file": "tools/blenderctl/dependencies.py",
+      "expected_sha256": "7bd212cf44e715edc8c693413dfce4ccc32fc2a83808fed3dd46475b137c8df5"
+    },
+    {
+      "file": "tools/blenderctl/dependency_contract.py",
+      "expected_sha256": "2a3a1d173490b7af656b8deee4cae7d777f2ece58f53c17a4d476bb14a1aeb4e"
+    },
+    {
+      "file": "tools/blenderctl/dependency_relink.py",
+      "expected_sha256": "b0090fde4d33a1448dfd7a7d0ecc747b0a7f06e7bd27e568467a8a6ad4bf03ff"
+    },
+    {
+      "file": "tools/blenderctl/directory_handles.py",
+      "expected_sha256": "91abeb61513e7e9d6dca13bdd94143d87d0cf17400ff359384f0d61ea1899b5e"
+    },
+    {
+      "file": "tools/blenderctl/driver_contract.py",
+      "expected_sha256": "08848753f342e523e81c98bb133c1c876f4b1b4f72875c100a695fd29518405d"
+    },
+    {
+      "file": "tools/blenderctl/driver_math.py",
+      "expected_sha256": "e5236871a599826581fc837a5d398c12bb869812d1c36e3474dda9c0dfc1db06"
+    },
+    {
+      "file": "tools/blenderctl/drivers.py",
+      "expected_sha256": "bbda9d0b49ca76e2f8e09ba287669b6d6ea6ca45f9d93daecbb0b3cd7889c1f4"
+    },
+    {
+      "file": "tools/blenderctl/exchange.py",
+      "expected_sha256": "a259b5c1b1a9f308c94befe1781a5f20e839d21576c79b10408565fceb3a128f"
+    },
+    {
+      "file": "tools/blenderctl/exchange_contract.py",
+      "expected_sha256": "4d420d2cac2d29303ab08c8e947f98bbcd40be62d618fa05fb8740adc70a4760"
+    },
+    {
+      "file": "tools/blenderctl/execution_contract.py",
+      "expected_sha256": "0e9ddce18f2290ba2f4aff6d57cd19abb51240687be7e00fa672c853382ac6d4"
+    },
+    {
+      "file": "tools/blenderctl/extensions.py",
+      "expected_sha256": "69c6641cf5b9844ba7215728aa515478788316dacce377a17fcf22b348c14f47"
+    },
+    {
+      "file": "tools/blenderctl/fbx_clock.py",
+      "expected_sha256": "6c9b656129428b09ce5819112e7a878595904c17b9a0ad8d6b7b12cebc29c86d"
+    },
+    {
+      "file": "tools/blenderctl/fbx_compat.py",
+      "expected_sha256": "ffb28ff96538e492d1f5eb7d39b126ea46cfe871479b4f40f6aeec5bacb0af9e"
+    },
+    {
+      "file": "tools/blenderctl/filesystem.py",
+      "expected_sha256": "d8cb1f07feb9dac590ea1103d7d6c0a8c0fcdca6377c49b57cce07e0369bed0e"
+    },
+    {
+      "file": "tools/blenderctl/font_binary.py",
+      "expected_sha256": "4083f7ca7e6ac5bc0fcb78851fdadcdce25cc52f596926b3fc1fb6355c47c596"
+    },
+    {
+      "file": "tools/blenderctl/font_curves.py",
+      "expected_sha256": "d2dbd9b16b82f04bbb2cef787d47aa5834d5b70878e241209fe03d39fec0d178"
+    },
+    {
+      "file": "tools/blenderctl/geometry_cache_layout.py",
+      "expected_sha256": "52554037defe3c962ad3f0f9895f8416dc922584252fe4d521fb35a1934fdd39"
+    },
+    {
+      "file": "tools/blenderctl/geometry_cache_reader.py",
+      "expected_sha256": "11ce7e66666d6eb9769fb12d3a7b4ccd3931cdd6ac7ff73e68aa35762a32d859"
+    },
+    {
+      "file": "tools/blenderctl/geometry_identity.py",
+      "expected_sha256": "0d248906e3b81f5891315c8e2e2af51e66520463fcb2a6ddfbb3c7e85c1bac02"
+    },
+    {
+      "file": "tools/blenderctl/geometry_interface.py",
+      "expected_sha256": "9f26e67577f252b87ee78a52d56da41e480b84467a168b14b17187a4533e6ce9"
+    },
+    {
+      "file": "tools/blenderctl/geometry_session.py",
+      "expected_sha256": "09deebe731dd501c03af72f27e8d498bcf694c327f169f09ca0e0df3cd54e323"
+    },
+    {
+      "file": "tools/blenderctl/geometry_temporal.py",
+      "expected_sha256": "5a2329bdb52828ad79df7662d8751ebd69f67c266322d684fbff9283d3f0fc6a"
+    },
+    {
+      "file": "tools/blenderctl/geometry_verifier.py",
+      "expected_sha256": "dc7c7b3048f133eab37681ed25ad2ee7b698232fb3e0566f87fc2c0b5277443a"
+    },
+    {
+      "file": "tools/blenderctl/geometry_workflow.py",
+      "expected_sha256": "85d972479501f897afe1a41985b52bfaecb9b4a8871f01ef76c46d01c5cb25fd"
+    },
+    {
+      "file": "tools/blenderctl/geometry_workflow_contract.py",
+      "expected_sha256": "3feca73f0c11bf33c40ff452f4058e3be76a0a4c6575f29199fa2016237e208c"
+    },
+    {
+      "file": "tools/blenderctl/glb_clock.py",
+      "expected_sha256": "436163ce65913d293dc3c255f28ba15559caf1f2cf5e6833b94a5bf81abdac30"
+    },
+    {
+      "file": "tools/blenderctl/hair.py",
+      "expected_sha256": "d255a35c96119c07b89a333982e69ecba95a0488833cb77bd93d2bddda7ec54f"
+    },
+    {
+      "file": "tools/blenderctl/hair_collision.py",
+      "expected_sha256": "57f7d06b1cf7c7f0e30ec0d24a2ef26fbe73d4153c56f214153594d6d2557e14"
+    },
+    {
+      "file": "tools/blenderctl/hair_contract.py",
+      "expected_sha256": "c349999bfc71e68f2f9d02cb9b7847d20caa895166872bb9c0efb50726cb2af2"
+    },
+    {
+      "file": "tools/blenderctl/hair_density.py",
+      "expected_sha256": "a556da7d5bc039ee724e8f747c1eb27a5a752137e4fe1b03bc0a560d02fffa1a"
+    },
+    {
+      "file": "tools/blenderctl/hair_dynamics.py",
+      "expected_sha256": "7c4ace00cc52ecde89f93beb493d379afb7f5a1ba7fb309a6107d3d39dc237c4"
+    },
+    {
+      "file": "tools/blenderctl/hair_dynamics_contract.py",
+      "expected_sha256": "ffce203dfea964c028332f229f33473106624dfb8f310954f861bae8d16f1124"
+    },
+    {
+      "file": "tools/blenderctl/hair_shape.py",
+      "expected_sha256": "7bb80557c83e9fc1f6868997f8ef48ad75b54667f60e576cc2f3702710fb9cae"
+    },
+    {
+      "file": "tools/blenderctl/hair_shape_contract.py",
+      "expected_sha256": "279e0891e57d65681d1f5b6ab9d7a0fc8369869f56214c56ff38e336b7d47195"
+    },
+    {
+      "file": "tools/blenderctl/hair_shape_nodes.py",
+      "expected_sha256": "276199582afddb5bc58657c96d1e9db05de689e43482941f07314c66d5d7cbeb"
+    },
+    {
+      "file": "tools/blenderctl/hair_surface.py",
+      "expected_sha256": "c5835dc1e68d07fd13e6b65ade46e03e4e6b399e31c5abcec0388a709f992548"
+    },
+    {
+      "file": "tools/blenderctl/hair_volume.py",
+      "expected_sha256": "239f66b84b6e2f86923d244ead041304b9884f042d64b77e6dc357896924a273"
+    },
+    {
+      "file": "tools/blenderctl/hair_volume_contract.py",
+      "expected_sha256": "f52a649220ff4371935d216a333db0190bff34b17dc9f2f678b43b8e06b97fd4"
+    },
+    {
+      "file": "tools/blenderctl/hair_voxels.py",
+      "expected_sha256": "606f49731099429e27a2f909942fc9deb31aadf59896db43d759353d10c385f4"
+    },
+    {
+      "file": "tools/blenderctl/inspection.py",
+      "expected_sha256": "6620586b037744e32662d1dcc6f40e0c57a5cf53341023ee05922316d8dac740"
+    },
+    {
+      "file": "tools/blenderctl/installation.py",
+      "expected_sha256": "99c97dfe89663103492bd8024bed52399dcfcd9611043cf9608ff9eea8c39c1e"
+    },
+    {
+      "file": "tools/blenderctl/isolated_script_worker.py",
+      "expected_sha256": "a4b6d86cb12edf5227463d96465ef7df8b5d569aa82c4a5ad61fd9408856a315"
+    },
+    {
+      "file": "tools/blenderctl/isolation_lifecycle.py",
+      "expected_sha256": "890c2264b55a16206a0515fa89bb8851f194248129bc64a36f2a6b6bd6586f8d"
+    },
+    {
+      "file": "tools/blenderctl/library.py",
+      "expected_sha256": "ba2056bb6946cfc69fc483ceeb74b393be031b77e03eb623f553d25e51c65687"
+    },
+    {
+      "file": "tools/blenderctl/lighting_batch.py",
+      "expected_sha256": "dc2ca558b7a820838afd3070406699371a9b6c27a26339708d0b6c4cf786db21"
+    },
+    {
+      "file": "tools/blenderctl/lighting_identity.py",
+      "expected_sha256": "8f1b4e22fc81d3c21293f8e762e58c29ba102333ea5a0211365d75c36bbddfcb"
+    },
+    {
+      "file": "tools/blenderctl/lighting_interface.py",
+      "expected_sha256": "5be893198042f94950ebf1c72ae55a0ffd4395e1ec767edc062a1b7b7798edb7"
+    },
+    {
+      "file": "tools/blenderctl/lighting_verifier.py",
+      "expected_sha256": "60e35ebc0f4370d55677e9d8c9ddb63e5d7538b71ffbf79ae2cb6c5b0a9564a1"
+    },
+    {
+      "file": "tools/blenderctl/lighting_workflow.py",
+      "expected_sha256": "fad8f064cc6ab9667ebee0c6ef558c0d4e5c0948d989e736c6a036251bc03844"
+    },
+    {
+      "file": "tools/blenderctl/lighting_workflow_contract.py",
+      "expected_sha256": "7d83495ec04c7007769e5c77c20f821810e45d979297b21d82179bd6a9a77ed9"
+    },
+    {
+      "file": "tools/blenderctl/link_contract.py",
+      "expected_sha256": "308dd0d146363ac04cc55f52467c5fcdbcc34f774b06fc3a43313f0933281a80"
+    },
+    {
+      "file": "tools/blenderctl/linking.py",
+      "expected_sha256": "cf77b959a091c4cb1daf857aba87353435fa73ad96dfaa4529d403fa6b37389d"
+    },
+    {
+      "file": "tools/blenderctl/liquid.py",
+      "expected_sha256": "533c76b50e82317aa78576efb455398a54e2d0e5be7a0d384a81ca09a6bc17d3"
+    },
+    {
+      "file": "tools/blenderctl/material_batch.py",
+      "expected_sha256": "948acb68efbd45944394fe411d640148fd250953250eb863f5ca06585786f4f4"
+    },
+    {
+      "file": "tools/blenderctl/material_batch_contract.py",
+      "expected_sha256": "e14b68e59b1284c0649efdb1a7ec536d5379e4d3d1da6a29747593725fc8d003"
+    },
+    {
+      "file": "tools/blenderctl/material_deformation.py",
+      "expected_sha256": "b5834d09d16a94a9548a957bea873bed1e9c2ab647e371fa01634b60ea1de57f"
+    },
+    {
+      "file": "tools/blenderctl/material_interface.py",
+      "expected_sha256": "a21412a713e95b8ea840d0b5d33e9f3326a7bc3e5782b93394791bb8f58179d4"
+    },
+    {
+      "file": "tools/blenderctl/material_interface_contract.py",
+      "expected_sha256": "e69d50d9be4147e2e2f5f0aa75ad7f1a773ac34bd1fd43854ef87cd96cfc09e0"
+    },
+    {
+      "file": "tools/blenderctl/material_outputs.py",
+      "expected_sha256": "e38d623c2def39457205e3154ef1a57d20575e142223eebdc580662347bcee27"
+    },
+    {
+      "file": "tools/blenderctl/material_progress.py",
+      "expected_sha256": "87f9682655be53bca4a211f3734b6edb61a96435e2cf41b907c4294b92b27541"
+    },
+    {
+      "file": "tools/blenderctl/material_study.py",
+      "expected_sha256": "1f460999fe60b533bae56ffbfc178546deeabf2f039ed169f7d6c33e6606d14b"
+    },
+    {
+      "file": "tools/blenderctl/material_study_contract.py",
+      "expected_sha256": "f35b8dc7358bfc3899e81b70cad23a221eea03bbd70bd62406e50e592b8423d7"
+    },
+    {
+      "file": "tools/blenderctl/material_workflow.py",
+      "expected_sha256": "1095a47635b8927156c24739ccbc5fe7201360ce61e369fa81f0691fb890cd13"
+    },
+    {
+      "file": "tools/blenderctl/material_workflow_contract.py",
+      "expected_sha256": "b64dc84f2df5be58e517c494079e43ad2990d5efcc33a612968d3fd09e3db9f5"
+    },
+    {
+      "file": "tools/blenderctl/media.py",
+      "expected_sha256": "2fad9d525c5d36f746996caf1f5155beeae5d48993754f3ee9356d4d1cd593b0"
+    },
+    {
+      "file": "tools/blenderctl/mesh_clip.py",
+      "expected_sha256": "e50ffc32ba790a07dc0c243902cd63e560682e4f841752ded2712237e9b67fe6"
+    },
+    {
+      "file": "tools/blenderctl/mesh_clip_analysis.py",
+      "expected_sha256": "90baa811e98dd9c64c8bf1640556310c45c974eb580f5f8b4f02cef438bae16a"
+    },
+    {
+      "file": "tools/blenderctl/model_contract.py",
+      "expected_sha256": "bc9f9e13ae67f5335092b45465539a5d82b0e41e8c9fd8fd8fe199e43268637e"
+    },
+    {
+      "file": "tools/blenderctl/modeling.py",
+      "expected_sha256": "b090bd6c13db381ec3c880c6de4153e3242a6019bb47818e25432d05eb4f7d47"
+    },
+    {
+      "file": "tools/blenderctl/native_mesh_cache.py",
+      "expected_sha256": "51920753a9af143de0f579ee3f7b73b14320dde5b9c878e938fe2d76f0f5847b"
+    },
+    {
+      "file": "tools/blenderctl/node_contract.py",
+      "expected_sha256": "34326e9a2fb5b5fd842b4a54565554587272e54e35b9b848eb328084602d52b0"
+    },
+    {
+      "file": "tools/blenderctl/node_zones.py",
+      "expected_sha256": "1a3f4a12b4d32f2649478b986f0e0c64156c73cfeebf8ca8f6dbfd2e767afe30"
+    },
+    {
+      "file": "tools/blenderctl/nodes.py",
+      "expected_sha256": "008104cd8113d98c5684181e2ac914d692bd80492cc8f939992d3dc867dc2448"
+    },
+    {
+      "file": "tools/blenderctl/operations.py",
+      "expected_sha256": "1436b109e066abd3baa4652451864e379272d8ceaebce6a79a0695d71b585133"
+    },
+    {
+      "file": "tools/blenderctl/operations_contract.py",
+      "expected_sha256": "494092de3d74c4bb2f2ebeaafe266e8159f13a5f1710295915fbc75a548ffe06"
+    },
+    {
+      "file": "tools/blenderctl/pipeline.py",
+      "expected_sha256": "d78b0bfdc655aa4b7eacd16bf18f6eecaf6de543368614278dc22c55bbb9bdb9"
+    },
+    {
+      "file": "tools/blenderctl/pipeline_contract.py",
+      "expected_sha256": "6069a01487e205869fd202fa5b71375367e3b0b5dcd7c984684d9c643fc7b5f3"
+    },
+    {
+      "file": "tools/blenderctl/preview_contract.py",
+      "expected_sha256": "6caea67d6af02cb101a167028248b35050a9274a11b8c0aaeab4fe2eae7071d4"
+    },
+    {
+      "file": "tools/blenderctl/preview_framing.py",
+      "expected_sha256": "ef4efb178f8be0a75d72820c63fa348542e6be00105e1a8d756795de8f1b6826"
+    },
+    {
+      "file": "tools/blenderctl/probes.py",
+      "expected_sha256": "53ea8742f76ea8c514301ad5d03edb8cdfdcc83b45120d9be348750425d19d0d"
+    },
+    {
+      "file": "tools/blenderctl/processes.py",
+      "expected_sha256": "2ce3f395008a75534c93976d2204b5e4d66b6338ddff471163778cf160709dc9"
+    },
+    {
+      "file": "tools/blenderctl/project_contract.py",
+      "expected_sha256": "dc64bc637c84c48f2f41ff0aca16bd18c424076b34b2c23608dda31b677daf1c"
+    },
+    {
+      "file": "tools/blenderctl/projects.py",
+      "expected_sha256": "2b09cd41e5170677a624b514e3aec39099b90421548de649ef62bb866867b130"
+    },
+    {
+      "file": "tools/blenderctl/protocol.py",
+      "expected_sha256": "4bc8d0c2d22ac962b5d2ce41203ea55a7bd0caef72ad5fd2d5531d12541071be"
+    },
+    {
+      "file": "tools/blenderctl/render_contract.py",
+      "expected_sha256": "7bb62a297b5dec81eba752cd15bede472d66e89636160c05479130ed8f6e0335"
+    },
+    {
+      "file": "tools/blenderctl/rendering.py",
+      "expected_sha256": "0f8ab588ae4ee9134afa6b9452d000c95caa1227fe43a1a47f271dc1afe7970f"
+    },
+    {
+      "file": "tools/blenderctl/resource_leases.py",
+      "expected_sha256": "d91cc702ae67d5414c26642610d8d9c6bf99bcd5696b76bd4db8fbb81d6450b7"
+    },
+    {
+      "file": "tools/blenderctl/retarget_actions.py",
+      "expected_sha256": "6bf366f34d9ef4b6baee7cd255276df34034db9a9340862ee2e05b3a3d0ce1d2"
+    },
+    {
+      "file": "tools/blenderctl/retarget_affine.py",
+      "expected_sha256": "aa207a2f46a1c25321e7e2c9237af05f837e49b0ebe982c9a24f9a2a2cf586bd"
+    },
+    {
+      "file": "tools/blenderctl/retarget_contract.py",
+      "expected_sha256": "722a0ec17f8fa39e05b74cc79d9c11614bf9b900484595944e8f63ae51f301a8"
+    },
+    {
+      "file": "tools/blenderctl/retarget_controls.py",
+      "expected_sha256": "5b89b6611edff2b8ba64326ffa287daa4ce7def3213f8a097e5ac014ce8256e1"
+    },
+    {
+      "file": "tools/blenderctl/retargeting.py",
+      "expected_sha256": "3a6e1e7ff3581a8781f2e4eb68077a3f4ecf88abfb4f9b212cd7d7a123f99b07"
+    },
+    {
+      "file": "tools/blenderctl/retopology.py",
+      "expected_sha256": "11c9d4a03879c6517f0b80a78b1975f2d4fee646c2c48576f024eb4721169295"
+    },
+    {
+      "file": "tools/blenderctl/retopology_contract.py",
+      "expected_sha256": "848abbed8e0c55e2f34ab8ec9057275c7420925803820403458a6467fa30e651"
+    },
+    {
+      "file": "tools/blenderctl/review_contract.py",
+      "expected_sha256": "8e071da5bc0a600f10f61958791134c0b71a8384340e06160d9b4c1528f69bd8"
+    },
+    {
+      "file": "tools/blenderctl/reviews.py",
+      "expected_sha256": "02c4993e57c36c0802535a78616bfef30b13d3d38d41e660b117e77f63044dc0"
+    },
+    {
+      "file": "tools/blenderctl/rig_adapter_contract.py",
+      "expected_sha256": "57ffc4d3c64539115fcbe3472e2657899528de1f242a253afefd2e8c91dccc57"
+    },
+    {
+      "file": "tools/blenderctl/rig_cloth.py",
+      "expected_sha256": "d3b4706e9b47b5a05e406c0cc70b1585eead7a580013eb49d807ef9bc8deea60"
+    },
+    {
+      "file": "tools/blenderctl/rig_contract.py",
+      "expected_sha256": "15db1f6498f7b9f092727adf4ff2bf026d322b0011c6700db3a9e450d90d421a"
+    },
+    {
+      "file": "tools/blenderctl/rig_exchange.py",
+      "expected_sha256": "6e0579cf7485f3211f073edc026f0709feaf9ab22a34a32820fdc1e53213f8c2"
+    },
+    {
+      "file": "tools/blenderctl/rig_package.py",
+      "expected_sha256": "90012da4b41a547095158d8ec9caaa50b50fdfae951fb2c76a3cffa0f40b6e84"
+    },
+    {
+      "file": "tools/blenderctl/rig_package_contract.py",
+      "expected_sha256": "526ee8191275cb253f6906f8c5b49b3982f10252baea533a7c778391ec86f4b2"
+    },
+    {
+      "file": "tools/blenderctl/rig_profile.py",
+      "expected_sha256": "84e1e686e4d45b7fedc46938e968fcee7c08985fea9869cc84125497ac684c1a"
+    },
+    {
+      "file": "tools/blenderctl/rig_profile_contract.py",
+      "expected_sha256": "c9121899b3198ca46958d305ae66d82855f3cba947c4301e81ead02c22ff96cb"
+    },
+    {
+      "file": "tools/blenderctl/rigging.py",
+      "expected_sha256": "848a81f6da39296adb5a02e4a0ec331750d31a9dc6ac392e268fb2ed7fa0c842"
+    },
+    {
+      "file": "tools/blenderctl/runner.py",
+      "expected_sha256": "bd1c51ccfe562599a2152187d2e5c0656f65f99aef39a581776df71fbf18dfb9"
+    },
+    {
+      "file": "tools/blenderctl/scene_contract.py",
+      "expected_sha256": "f46c9f0cc38d9cedc2e68d6cb5e249e9930bbc11e34e33f2960438d166700208"
+    },
+    {
+      "file": "tools/blenderctl/scenes.py",
+      "expected_sha256": "bfafcc63b5bfb38bf2d956b05de300aa16d5a210c26a0a770e386d36fde7b833"
+    },
+    {
+      "file": "tools/blenderctl/script_isolation.py",
+      "expected_sha256": "4a1540f6001d939acf13f2f9d20d02404891b5012933b37b13f072ea00736886"
+    },
+    {
+      "file": "tools/blenderctl/sculpt_contract.py",
+      "expected_sha256": "6f440224842f9cf3e8cec7ee43674fec0f92248fb3d26cb8a0d67734c012140f"
+    },
+    {
+      "file": "tools/blenderctl/sculpt_host.py",
+      "expected_sha256": "f6046e5a3a9d9907e7689cf5c31f9610e3086aeb3d57b988c961a8350b424908"
+    },
+    {
+      "file": "tools/blenderctl/sculpt_review.py",
+      "expected_sha256": "e2f7cc01a33c7460fa3ce399c694f61e03255d697e3f8ab8364e7a58f9586db1"
+    },
+    {
+      "file": "tools/blenderctl/sculpt_state.py",
+      "expected_sha256": "fe57bf0ba169ae7e217116dbe1d4825f30153942499b10f03eb39b85c6838492"
+    },
+    {
+      "file": "tools/blenderctl/sculpt_worker.py",
+      "expected_sha256": "d712d6db687bd5a69c1ae4f37253beea552047a9b061562a583c5c9be31c3bd4"
+    },
+    {
+      "file": "tools/blenderctl/simulation.py",
+      "expected_sha256": "0e815b29d659dfd09d03026ef1f2aec2de228421682ae0c6d2cb280d7f0efb8e"
+    },
+    {
+      "file": "tools/blenderctl/simulation_contract.py",
+      "expected_sha256": "ab6be266b41a5b6d59d76eb58c83e505f513b4590c8a4004ef8c7c689eddc17d"
+    },
+    {
+      "file": "tools/blenderctl/skin_exchange.py",
+      "expected_sha256": "d17065ad992ae42a39e2a358b355902bc02dfddd7ad996ebf68d68b70d929439"
+    },
+    {
+      "file": "tools/blenderctl/skin_rebind.py",
+      "expected_sha256": "24fc20b09be76764c93cc30ee2fa8f4a46d3c900c4137e7e82789a443cf775af"
+    },
+    {
+      "file": "tools/blenderctl/telemetry.py",
+      "expected_sha256": "d705892949f28c13dfc91e20072989a7e7537aa77407c9e6fed1abe4554cf452"
+    },
+    {
+      "file": "tools/blenderctl/timing.py",
+      "expected_sha256": "5738b873aaa8f0852ba4f0af595e57dd79b6e92752311bbb403736a025e516df"
+    },
+    {
+      "file": "tools/blenderctl/tracking.py",
+      "expected_sha256": "43fa730eca67cb7066fc2761bbb37a11e70767ab77c2a28983c9d5be4230d02b"
+    },
+    {
+      "file": "tools/blenderctl/tracking_contract.py",
+      "expected_sha256": "0e3c15157b24c79a4fa2077ee97e05c07af03a41c6b6a93629be789ba3f03db2"
+    },
+    {
+      "file": "tools/blenderctl/tracking_input.py",
+      "expected_sha256": "6f4f68627c1534248a269b8baec71eaf78edbc27d88b5232b3a3b18ba241f4ed"
+    },
+    {
+      "file": "tools/blenderctl/tracking_preview.py",
+      "expected_sha256": "ea58e1db142b842746a4be21111ff62b35945c22c39c9a275b4bc4b09a283e26"
+    },
+    {
+      "file": "tools/blenderctl/tracking_quality.py",
+      "expected_sha256": "c6c9c57b33e8e247e8412ab841b31769a2e219e88a32c42bcbda0397ef939c9c"
+    },
+    {
+      "file": "tools/blenderctl/transactions.py",
+      "expected_sha256": "c411c2ea8c14853b6dac984bc10b40ea13b6fdf55805815483a0c7125b0274d0"
+    },
+    {
+      "file": "tools/blenderctl/typed_dependencies.py",
+      "expected_sha256": "b3147afa940771961ef944211230bb0275207620cf0b799088156a3d4dc80757"
+    },
+    {
+      "file": "tools/blenderctl/uv_contract.py",
+      "expected_sha256": "013bbce2b294f59a6db2e9cf36a80cede845330c846c5028bcb62e056b01609e"
+    },
+    {
+      "file": "tools/blenderctl/uv_layout.py",
+      "expected_sha256": "eab105932f3141bc93c36dec555caabe04c76e5be7e1bb656421e7b94ef1618a"
+    },
+    {
+      "file": "tools/blenderctl/verification.py",
+      "expected_sha256": "6077cddc44356cf8b47946773463fe9401d4a4470d5e7c0f443c6b9088e08f1a"
+    },
+    {
+      "file": "tools/blenderctl/verification_contract.py",
+      "expected_sha256": "ec1ce4664afc96c694485386cc41bb365176e86d4273bfd181c0579f0e256acc"
+    },
+    {
+      "file": "tools/blenderctl/weight_transfer.py",
+      "expected_sha256": "33e441a6dbd6499c65fa70e9c1e49e9bcd5e7c1c31dd76b695f1b5eaeeaa2b3b"
+    },
+    {
+      "file": "tools/blenderctl/weight_transfer_contract.py",
+      "expected_sha256": "50f7e12cbab0e90b9f71955b31a853852507985225c94bfd86cefef982290f00"
+    },
+    {
+      "file": "tools/blenderctl/win_appcontainer.py",
+      "expected_sha256": "c00d0bc4c029ec53bd30f00ec1396b40e95a67a244dc7334f414a624da7872bb"
+    },
+    {
+      "file": "tools/blenderctl/worker.py",
+      "expected_sha256": "556353b11e90dcb17588331c5a932122176df33deca0bc2cd39fdc954cc48728"
+    },
+    {
+      "file": "tools/blenderctl/workflow_contract.py",
+      "expected_sha256": "2e4c1c0308608be996adcec88b4271612b3a72838f44ed26fd0fe67f7cfc7a84"
+    },
+    {
+      "file": "tools/blenderctl/workflow_evidence.py",
+      "expected_sha256": "40e028a3be718336d514e039740c89389701590297feb6dc746257df37c2e21f"
+    },
+    {
+      "file": "tools/blenderctl/workflow_identity.py",
+      "expected_sha256": "27d41674b7fdcb417ce04f38aa55b19272ccaef86389398a9164d59ee5b3b193"
+    },
+    {
+      "file": "tools/blenderctl/workflow_preflight.py",
+      "expected_sha256": "96240dff53233978a0ccb068bba64ac40e25d0b50948bf8f7fa1efa832502de0"
+    },
+    {
+      "file": "tools/blenderctl/workflow_runtime.py",
+      "expected_sha256": "ec827180906d90a32e72d50f1da7af97d038f14c3c14a3de6b03da6fad9742a2"
+    },
+    {
+      "file": "tools/blenderctl/zone_cache.py",
+      "expected_sha256": "ae053c1227773aa04ebcc789e57f8bcb33df63a856077d6ade368bad433c19a4"
+    },
+    {
+      "file": "tools/blenderctl/zone_cache_contract.py",
+      "expected_sha256": "0e92fda9ef8ae615d2c6dcb44408a2679cfa03688b52531eb04119b31d447cc2"
+    },
+    {
+      "file": "tools/blenderctl/zone_contract.py",
+      "expected_sha256": "83b6264814c0bdd800ea337218b8215848a5d5e907a01b854a72bc50f4c43ed3"
+    },
+    {
+      "file": "tools/blenderctl/zone_state_oracle.py",
+      "expected_sha256": "09e97cdb80321ef68913e9c5fb0d53b8d84b5f64139c3b883c7670d2b1efb46b"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/__init__.py",
+      "expected_sha256": "09e725d3e52d09fff202a2a13567fdc0b97f525c99a5f2b9b19faa6e4a5dfa8f"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/advanced.py",
+      "expected_sha256": "c42222b43fe1edff7757992bd1fa5b7360e498a671f434c1b0b911b2fcc8a57c"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/contract.py",
+      "expected_sha256": "e5d21ac63e1b3af292a6e0cb2f0c85751317f166a17aabd1b62893c41b680704"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/core.py",
+      "expected_sha256": "d764e2a057a67f07d4cb797fc03d8f514c37926ab588463b7c7508ac6bfbb942"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/presets.py",
+      "expected_sha256": "cb8d83bfc441c4fc3f41cd5ef45860287447e3d528bbf7d1ad5fa402082b2e14"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/templates.py",
+      "expected_sha256": "ece8b4789a84991adcaf96a29af7ac160dcf75b5fa7df9cdab92e19eb8725657"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/ui.py",
+      "expected_sha256": "dfbf96b55207d7d260f9669dec6082c3e987784d4b13eb7b142aa59616eede71"
+    }
+  ],
+  "extension_archive": {
+    "file": "dist/lighting_workflow-0.2.1.zip",
+    "sha256": "8a58c16659a3b7db86160fa2a6bb5a1fc2eb7349f360aae2f53292e4b679eee3",
+    "bytes": 44522
+  },
+  "source_scope": "All lighting identity runtime files retain original byte content and directory layout; additional existing geometry/material runtime dependencies retain bytes, outside this release validation scope"
+}

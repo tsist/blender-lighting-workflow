@@ -1,0 +1,16 @@
+name: Portable source
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  host-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/verify_distribution.py
+      - run: python -m compileall -q tools scripts
+      - run: python tools/blenderctl/cli.py --version
+      - run: python tools/blenderctl/cli.py lighting describe
