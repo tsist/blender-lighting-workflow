@@ -4,7 +4,7 @@
 
 A Blender extension and companion agent skill for creating, editing, inspecting and restoring editable lighting plans through protected saved-file CLI work units.
 
-**Lighting Workflow 0.2.1 · compatible blenderctl snapshot 0.57.0 · lighting skill 0.2.0 · GPL-3.0-or-later.** Local validation used Windows and Blender **5.2.1 LTS / 9e2066aef7ef**. Other versions and platforms need separate verification.
+**Lighting Workflow 0.2.2 · compatible blenderctl snapshot 0.57.0 · lighting skill 0.2.0 · GPL-3.0-or-later.** The Windows Blender 5.3.0 compatibility check covered managed rig creation, cold reopen and static Cycles and EEVEE previews. The previous Blender 5.2.1 qualification is recorded in the release notes.
 
 The0.2.1 patch fixes cold-reopen transforms of disabled managed lights/boards in inspection and template export. Original four-case image evidence remains the0.2.0 baseline; it is not relabeled with the patch identity. See [release notes](docs/RELEASE_NOTES.md).
 
@@ -22,7 +22,7 @@ The local representative set covers product, cartoon/NPR character, room and out
 
 ## Install and run
 
-Install the0.2.1 extension ZIP through Blender **Preferences → Extensions → Install from Disk**, then enable Lighting Workflow. Its SHA-256 is `8a58c16659a3b7db86160fa2a6bb5a1fc2eb7349f360aae2f53292e4b679eee3`.
+Install the 0.2.2 extension ZIP through Blender **Preferences → Extensions → Install from Disk** and enable Lighting Workflow. The release includes SHA-256 checksums.
 
 Clone or unpack this repository for the compatible CLI. Python **3.12+** and a separately installed Blender are required; neither is bundled. This checkout keeps the original `tools/` layout and all runtime Python modules byte-for-byte to preserve lighting implementation identity. Optional domains retain their separate dependencies and verification scope; packaging their modules does not certify them.
 

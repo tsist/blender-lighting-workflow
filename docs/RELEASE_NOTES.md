@@ -1,3 +1,7 @@
+# Release 0.2.2
+
+The Windows Blender 5.3.0 build 02f0899d78e3 ran the repository's procedural fixture through a managed key and fill rig, World and disabled flag, then independently reopened the result and produced one decoded 128 × 128 image each in Cycles and EEVEE. Source bytes remained identical. Version 0.2.2 records this qualification in the extension and CLI discovery.
+
 # Release 0.2.1
 
 First standalone public release of Lighting Workflow0.2.1, with compatible blenderctl0.57.0 runtime and lighting skill0.2.0. CLI/schema and skill versions remain unchanged. The original0.2.0 was the locally accepted case baseline, not the extension distributed by this release.

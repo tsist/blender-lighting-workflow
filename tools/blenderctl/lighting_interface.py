@@ -15,7 +15,7 @@ def describe(operation=None,schema=False,section=None):
     if schema:
         if operation not in schemas: raise Failure('INVALID_REQUEST','--schema requires a lighting operation')
         return {'operation':operation,'schema':schemas[operation]}
-    return {'cli_version':VERSION,'plugin_version':'0.2.1','lighting_schema_version':'1.0',
+    return {'cli_version':VERSION,'plugin_version':'0.2.2','lighting_schema_version':'1.0',
         'operations':['lighting.run','lighting.inspect','lighting.template-save','lighting.template-edit','lighting.batch'],'actions':['create','patch','restore'],
         'state_source':'SAVED_DISK_V1; GUI handoff through explicit saved snapshot',
         'milestone':'M2: native controls, boards, linking, HDRI/sky, actual-state templates and bounded batches',

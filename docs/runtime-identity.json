@@ -1,8 +1,8 @@
 {
-  "plugin_version": "0.2.1",
+  "plugin_version": "0.2.2",
   "cli_version": "0.57.0",
   "skill_version": "0.2.0",
-  "implementation_sha256": "6736923ee41f64392c3217336d9d34849bc0ad5e5b1269604574d5568d28dbb8",
+  "implementation_sha256": "e72163c8d1304b528ff51049e3f290a5957b48fa0c5c2c163a63a9d893ffdb59",
   "runtime_documents": [
     {
       "file": "tools/blenderctl/adaptive_sampling.py",
@@ -222,7 +222,7 @@
     },
     {
       "file": "tools/blenderctl/lighting_interface.py",
-      "expected_sha256": "5be893198042f94950ebf1c72ae55a0ffd4395e1ec767edc062a1b7b7798edb7"
+      "expected_sha256": "d1884d18f3bf1ebe56154f4ce9066e97590941043823d5cc699a111b66fe7716"
     },
     {
       "file": "tools/blenderctl/lighting_verifier.py",
@@ -642,9 +642,9 @@
     }
   ],
   "extension_archive": {
-    "file": "dist/lighting_workflow-0.2.1.zip",
-    "sha256": "8a58c16659a3b7db86160fa2a6bb5a1fc2eb7349f360aae2f53292e4b679eee3",
-    "bytes": 44522
+    "file": "dist/lighting_workflow-0.2.2.zip",
+    "sha256": "24c8d6711967a2bd7ad94ce1a18144bf2b3324311591dcfec32349a8a48f14c8",
+    "bytes": 32198
   },
   "source_scope": "All lighting identity runtime files retain original byte content and directory layout; additional existing geometry/material runtime dependencies retain bytes, outside this release validation scope"
 }
