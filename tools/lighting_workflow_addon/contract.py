@@ -26,12 +26,13 @@ def num(lo=-1e6, hi=1e6):
 
 
 NAME = {'type': 'string', 'minLength': 1, 'maxLength': 160}
+FILE_PATH = {'type': 'string', 'minLength': 1, 'maxLength': 4096}
 ID = {'type': 'string', 'pattern': r'^[A-Za-z][A-Za-z0-9_-]{0,63}$'}
 SHA = {'type': 'string', 'pattern': r'^[0-9a-f]{64}$'}
 BOOL = {'type': 'boolean'}
 VEC = arr(num(-1000, 1000), 3, 3)
 COLOR = arr(num(0, 1), 3, 3)
-FILE = obj({'file': NAME, 'expected_sha256': SHA}, ('file', 'expected_sha256'))
+FILE = obj({'file': FILE_PATH, 'expected_sha256': SHA}, ('file', 'expected_sha256'))
 LINK_FIELDS = {'receivers': arr(NAME, 0, 256), 'blockers': arr(NAME, 0, 256),
                'receivers_mode': {'enum': ['INCLUDE', 'EXCLUDE']},
                'blockers_mode': {'enum': ['INCLUDE', 'EXCLUDE']}}
@@ -45,7 +46,7 @@ LIGHT = obj({'id': ID, 'role': NAME, 'type': {'enum': ['AREA', 'POINT', 'SPOT', 
              'aim': VEC, 'angle_deg': num(.001, 180), 'spot_size_deg': num(.001, 179.9),
              'spot_blend': num(0, 1)}, ('id', 'role', 'type', 'location', 'energy', 'color'))
 WORLD = obj({'kind': {'enum': ['constant', 'sky', 'hdri']}, 'color': COLOR,
-             'strength': num(0, 10000), 'file': NAME, 'rotation_deg': num(-36000, 36000),
+             'strength': num(0, 10000), 'file': FILE_PATH, 'rotation_deg': num(-36000, 36000),
              'sky_type': NAME, 'sun_rotation_deg': num(-36000, 36000),
              'sun_elevation_deg': num(-90, 90),
              'sun_disc': {**BOOL, 'description': 'Native Sky sun disc is Cycles-only; Eevee does not support this sun-disc control. Use an explicit SUN light for direct light.'}}, ('kind',))
@@ -73,9 +74,9 @@ PREVIEW_SCHEMA = obj({'engines': arr({'enum': ['CYCLES', 'BLENDER_EEVEE']}, 1, 2
     'samples': {'type': 'integer', 'minimum': 1, 'maximum': 256},
     'frames': arr({'type': 'integer', 'minimum': 1, 'maximum': 100000}, 1, 24),
     'cameras': arr(NAME, 1, 24), 'denoise': BOOL}, ('engines', 'device', 'width', 'height', 'samples'))
-RUN_PARAMS_SCHEMA = obj({'file': NAME, 'expected_sha256': SHA, 'resources': arr(FILE, 0, 256),
+RUN_PARAMS_SCHEMA = obj({'file': FILE_PATH, 'expected_sha256': SHA, 'resources': arr(FILE, 0, 256),
     'manifest': MANIFEST_SCHEMA, 'preview': PREVIEW_SCHEMA}, ('file', 'expected_sha256', 'resources', 'manifest'))
-INSPECT_PARAMS_SCHEMA = obj({'file': NAME, 'expected_sha256': SHA, 'resources': arr(FILE, 0, 256),
+INSPECT_PARAMS_SCHEMA = obj({'file': FILE_PATH, 'expected_sha256': SHA, 'resources': arr(FILE, 0, 256),
     'scene': NAME, 'rig_id': ID}, ('file', 'expected_sha256', 'resources', 'scene'))
 
 
