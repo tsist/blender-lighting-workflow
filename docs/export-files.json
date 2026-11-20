@@ -145,6 +145,7 @@
     "examples/make_demo.py",
     "scripts/build_release.py",
     "scripts/install_skills.py",
+    "scripts/test_lighting_file_paths.py",
     "scripts/verify_distribution.py",
     "skills/blender-lighting/SKILL.md",
     "skills/blender-lighting/references/advanced-controls.md",
