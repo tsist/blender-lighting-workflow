@@ -2,7 +2,7 @@
   "plugin_version": "0.2.2",
   "cli_version": "0.57.0",
   "skill_version": "0.2.0",
-  "implementation_sha256": "e72163c8d1304b528ff51049e3f290a5957b48fa0c5c2c163a63a9d893ffdb59",
+  "implementation_sha256": "30686249201d0916804920e379fd3518f7e1b72a5673032f894c0bcef7e83484",
   "runtime_documents": [
     {
       "file": "tools/blenderctl/adaptive_sampling.py",
@@ -622,7 +622,7 @@
     },
     {
       "file": "tools/lighting_workflow_addon/contract.py",
-      "expected_sha256": "e5d21ac63e1b3af292a6e0cb2f0c85751317f166a17aabd1b62893c41b680704"
+      "expected_sha256": "88fb4a06b5ce3aff800dc945ffb3d1deb55311efbdb6e0100b08fe0b8b000963"
     },
     {
       "file": "tools/lighting_workflow_addon/core.py",
@@ -642,9 +642,9 @@
     }
   ],
   "extension_archive": {
-    "file": "dist/lighting_workflow-0.2.2.zip",
-    "sha256": "24c8d6711967a2bd7ad94ce1a18144bf2b3324311591dcfec32349a8a48f14c8",
-    "bytes": 32198
+    "file": "dist/lighting_workflow-dev-long-path.zip",
+    "sha256": "c34a7e2009aca99308f403ea10a509d53de34fafe2efb1d682ad93bdb462dc7d",
+    "bytes": 32218
   },
-  "source_scope": "All lighting identity runtime files retain original byte content and directory layout; additional existing geometry/material runtime dependencies retain bytes, outside this release validation scope"
+  "source_scope": "Development source based on Lighting Workflow 0.2.2, not a replacement published release. The extension archive digest refers to these edited source members, packed using scripts.build_release.archive (module basenames, .py files and blender_manifest.toml)."
 }
