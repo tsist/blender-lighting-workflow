@@ -1,0 +1,6 @@
+interface:
+  display_name: "Blender 灯光制作"
+  short_description: "保留中性基线灯，搭建成片主辅轮廓光与环境 HDRI，对比双引擎实拍并用模板批量套用到多镜头"
+  default_prompt: "请使用 $blender-lighting 核对当前工程与中性基线灯，按参考搭建可编辑灯光方案，输出 Cycles 与 EEVEE Next 对照图并按需保存模板。"
+policy:
+  allow_implicit_invocation: true

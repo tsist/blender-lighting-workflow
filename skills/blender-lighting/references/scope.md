@@ -1,17 +1,33 @@
-# 当前范围与证据
+# 能力范围与协作边界
 
-公开包基线：Lighting Workflow0.2.1、匹配CLI0.57.0、打光技能0.2.0。原本机验证使用Windows、Blender5.2.1 LTS/build9e2066aef7ef；其他版本/平台须分别实测。插件补丁修复禁用受管对象冷重开的检查/模板变换读取；CLI/Schema、艺术规范和目录架构保持，路径与证据导航为公开适配。
+本文件说明当前工作区灯光工作流的适用范围、场景前置条件与跨部门协作分工。实时查看当前宿主、已验发行号与全部动作清单，运行：
 
-先设置BLENDERCTL_ROOT为明确匹配checkout，实际入口为该checkout的blenderctl.ps1；执行显式全局--blender与独立--jobs-dir。插件来源在checkout的tools/lighting_workflow_addon，host合同为tools/blenderctl/lighting_workflow_contract.py和lighting_interface.py。公共说明见 所选checkout的`docs/USAGE.md`、`docs/VALIDATION.md`、`docs/SKILLS.md`。不从独立安装的技能目录猜CLI位置。
+```powershell
+& './blenderctl.ps1' discover --product lighting --actions
+```
 
-saved-file create/patch/restore、原生灯/World、可选地板、三锚定、双引擎预览、原生控光、受管板与链接、版本化实际状态模板、跨工程有界批量已在本机对应范围验证。一个Scene一个活动方案。GUI布局/选方案与共享后台operator已验；原生参数编辑/Text快照/恢复全部鼠标交互未跑，Text检查快照不保证可重放manifest。
+## 当前可直接使用的能力
 
-本机15项core、21项template加别名/边界检查、51项只读交叉审核和独立公共技能执行通过。official quick_validate因现有解释器缺PyYAML记not_run；基本结构/链接/字节校验和实际技能演练分别记录，不冒充官方校验器通过。历史实现身份与最终身份分列，不用新SHA替旧证据改名。
+- **工作副本生命周期**：围绕明确保存的 `.blend` 与 SHA256 执行 `lighting inspect` 及 `lighting run`（`create`、`patch`、`restore`），每次编辑均输出独立候选并经另起进程冷重开复核，原工程、模型、材质与既有相机保持完好。
+- **原生灯具与环境**：支持 `AREA`、`POINT`、`SPOT`、`SUN` 全套原生参数、柔光箱与条光、常量 World、程序天空与外部 HDRI（带资源 SHA256 闭环校验），并支持可选棚拍背景地板。
+- **锚定与运动镜头**：支持 `world`、`target`、`camera` 三类锚定，可在指定帧号上建灯与多帧出图核验。
+- **高阶控光**：支持原生照明链接（`receivers`）与阴影链接（`blockers`）的 `INCLUDE` / `EXCLUDE` 模式，以及受管反光板（`reflector`）和黑遮光板（`flag`）。
+- **双引擎对照预览**：支持在同一工作流内输出 Cycles 与 EEVEE Next 实拍 PNG 预览并各自解码核验。
+- **面板交接与内嵌快照**：支持通过 `lighting rig-handoff` 对已保存工程执行选方案、选单灯、选整组、编辑单灯属性（`shape`、`angle_deg`、`hide_render`、`hide_viewport`）以及读写工程内嵌快照。
+- **模板与批量**：支持导出当前实际状态为版本化模板、递增修订模板、按功率策略跨镜迁移，以及 1 至 8 项、合计最多 24 图的有界顺序批量与安全断点续跑。
 
-0.2.1共用rigid reader从persisted basis/parentinverse/evaluated parent读实际刚体变换，无可见性切换副作用；不支持的对象自身约束/Action/physics/curve parenting拒绝。三锚定1/8/16帧、禁用对象迁移/独立重开和15core/21template补丁回归通过。补丁实现身份6736923e…与四案例/24运动图原0.2.0身份3864a989…分开，未声称原正式图已按补丁重渲。
+## 使用前置与约定
 
-原用户确认产品中性及新增角色/室内/室外预览方向达到及格；正式四类共8PNG、5编辑工程，主线程看图，不能声称用户逐张确认正式像素。运动有24图与1/8/16帧锚定/非目标独立验证，非完整连续视频/复杂动画保证。公开摘要不捆用户资产、私有blend、原图和原审计JSON。
+- **单场景单活动灯组**：一个 Scene 同一时刻保持一个活动受管灯组。需要换一套全新布光方案时，先对当前灯组执行 `restore` 还原原灯与 World，再创建新方案。
+- **显式保存再交接**：用户在打开的 Blender 窗口里做了手调后，先保存持久 `.blend` 快照，再通过 `lighting inspect`、`lighting run` 或 `lighting rig-handoff` 接手，确保后台读到最新状态。
+- **外部资源声明**：静态贴图与 HDRI 在 `resources` 中声明绝对路径与 SHA256；涉及动态 UDIM、序列帧贴图或模拟缓存时，按对应专项契约先做好前置准备。
+- **EEVEE Next 反光补光前置**：需要白色反光板在 EEVEE Next 下贡献间接补光时，提前在场景中配置并烘焙 `VOLUME` 光照探针，灯位或控光板调整后重新烘焙并保存。
+- **跨引擎太阳统一**：需要双引擎保持一致的直射太阳光时，将程序天空的 `sun_disc` 设为 `false`，用原生 `SUN` 灯具承担太阳主光。
 
-Eevee反光补光有明确VOLUME探针/匹配烘焙前置，插件不自动创建/烘焙/重烘焙；单有板对象不证明贡献。Sky原生日轮为Cycles-only，NPR采用引擎专用材质输入，照明工具随后保护。详细边界查 [advanced-controls](advanced-controls.md)。旧M1工程仍可编辑/恢复，缺原saved_expectation的旧恢复报告要从源重新运行。
+## 与其他部门的协作分工
 
-本机代表案例不包含完整角色绑定、灯光动画编排、IES/Gobo、体积雾、任意资产/缓存、跨平台或固定提速承诺。私人访谈、WM和Wiki不公开，也不继承原用户对新任务的授权。宿主有自己的知识库时回读实际原文与适用范围；能力缺失不臆称检索或写入。新结论使用当前项目已有知识/审计流程，不在技能目录另建长期知识库。
+- **相机与镜头表**：构图调整、景别切换和镜头起止帧排定，交由 [blender-camera-workflow](https://github.com/tsist/blender-camera-workflow/blob/main/skills/blender-camera-workflow/SKILL.md) 统筹。
+- **材质与着色修改**：排查后确认发灰、塑料感或高光异常源自材质节点或贴图，以及为三渲二分别配置 Cycles / EEVEE 专属着色器时，交由 [blender-material-authoring](https://github.com/tsist/blender-material-workflow/blob/main/skills/blender-material-authoring/SKILL.md) 或 [blender-toon-workflow](https://github.com/tsist/blender-toon-workflow/blob/main/skills/blender-toon-workflow/SKILL.md) 处理，再把定稿副本交回布光。
+- **批量镜头渲染与后期合成**：多镜头动画序列渲染交由 [blender-render-batch](https://github.com/tsist/blender-render-batch/blob/main/skills/blender-render-batch/SKILL.md)；辉光、景深、调色与后期深度补光交由 [blender-compositing](https://github.com/tsist/blender-compositing-workflow/blob/main/skills/blender-compositing/SKILL.md)。
+- **正式资产入库**：带灯光或独立道具通过审看需要归档入库时，交由 [blender-asset-manager](https://github.com/tsist/blenderctl/blob/main/skills/blender-asset-manager/SKILL.md) 执行命名校验、目录编目与发布事务。
+- **超范围特性**：涉及完整灯光关键帧动画编排、IES/Gobo 投射纹理或复杂体积雾制作时，先在工作副本上用 Blender 原生节点与动画工具配合实现，再由灯光环节统一核验最终画面。
