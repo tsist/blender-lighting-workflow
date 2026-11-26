@@ -1,3 +1,7 @@
+# Release 0.3.0
+
+Goal-driven lighting combines named-light adjustments with exposure, background protection, key-to-fill ratio and image luminance targets in Blender 5.3.0. Added local fill and receiver changes require explicit permission. Cycles CPU measurement and candidate protection were tested on Windows with build `02f0899d78e3`. See the [production request guide](GOAL-LIGHTING.md).
+
 # Release 0.2.2
 
 The Windows Blender 5.3.0 build 02f0899d78e3 ran the repository's procedural fixture through a managed key and fill rig, World and disabled flag, then independently reopened the result and produced one decoded 128 × 128 image each in Cycles and EEVEE. Source bytes remained identical. Version 0.2.2 records this qualification in the extension and CLI discovery.

@@ -1,6 +1,6 @@
 # Agent skill installation
 
-The public [blender-lighting skill](../skills/blender-lighting/SKILL.md) retains version0.2.0 and the original lighting methods. Checkout paths, public evidence/navigation and the supported plugin0.2.1 baseline are adapted. The original local maintenance/installed skill is not replaced by this export.
+The public [blender-lighting skill](../skills/blender-lighting/SKILL.md) version 1.1.0 includes the Blender 5.3 goal-driven workflow and the existing managed-rig methods. The [production request guide](GOAL-LIGHTING.md) identifies the separate compatible blenderctl distribution.
 
 Choose the host's actual skill directory explicitly. For Codex this is normally a `skills` directory beneath its configured home; other agents have their own conventions. Installation copies only the skill, not Blender or a CLI environment. Existing directories must be reviewed/migrated deliberately, not silently overwritten.
 

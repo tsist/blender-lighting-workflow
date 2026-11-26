@@ -4,9 +4,9 @@
 
 A Blender extension and companion agent skill for creating, editing, inspecting and restoring editable lighting plans through protected saved-file CLI work units.
 
-**Lighting Workflow 0.2.2 · compatible blenderctl snapshot 0.57.0 · lighting skill 0.2.0 · GPL-3.0-or-later.** The Windows Blender 5.3.0 compatibility check covered managed rig creation, cold reopen and static Cycles and EEVEE previews. The previous Blender 5.2.1 qualification is recorded in the release notes.
+**Lighting Workflow 0.3.0 · Blender 5.3.0 · lighting skill 1.1.0 · GPL-3.0-or-later.** Goal-driven tuning combines exposure, background protection, key-to-fill ratios, and measured image brightness. Use the [production request guide](docs/GOAL-LIGHTING.md) with the separate blenderctl v0.64.0 distribution and production release 1.0.0.
 
-The0.2.1 patch fixes cold-reopen transforms of disabled managed lights/boards in inspection and template export. Original four-case image evidence remains the0.2.0 baseline; it is not relabeled with the patch identity. See [release notes](docs/RELEASE_NOTES.md).
+Previous lighting-rig qualifications are recorded in the [release notes](docs/RELEASE_NOTES.md).
 
 ## Capabilities
 
@@ -22,9 +22,9 @@ The local representative set covers product, cartoon/NPR character, room and out
 
 ## Install and run
 
-Install the 0.2.2 extension ZIP through Blender **Preferences → Extensions → Install from Disk** and enable Lighting Workflow. The release includes SHA-256 checksums.
+Install the 0.3.0 extension ZIP through Blender **Preferences → Extensions → Install from Disk** and enable Lighting Workflow. The release includes SHA-256 checksums.
 
-Clone or unpack this repository for the compatible CLI. Python **3.12+** and a separately installed Blender are required; neither is bundled. This checkout keeps the original `tools/` layout and all runtime Python modules byte-for-byte to preserve lighting implementation identity. Optional domains retain their separate dependencies and verification scope; packaging their modules does not certify them.
+Clone or unpack this repository for the vendored CLI snapshot 0.57.0 and the managed rig commands below. Python **3.12+** and a separately installed Blender are required; neither is bundled. This checkout keeps the original `tools/` layout and all runtime Python modules byte-for-byte to preserve lighting implementation identity. Optional domains retain their separate dependencies and verification scope; packaging their modules does not certify them.
 
 From the checkout in PowerShell:
 
@@ -46,4 +46,4 @@ The five execution commands are `lighting.run`, `lighting.inspect`, `lighting.te
 
 This public repository contains extension/runtime source, schemas, portable skill documentation and release tooling. It excludes Blender binaries, user production assets, private `.blend` files, original rendered case images, production audit JSON, personal configuration, working-memory records and private Wiki.
 
-Original bounded local validation is summarized publicly; it is not a claim that public CI rendered Blender scenes or validated Linux. The patch adds the documented transform-reading correction without changing the CLI0.57.0/schema version, artistic methods or repository/runtime architecture. See [release notes](docs/RELEASE_NOTES.md) and [license scope](docs/LICENSING.md).
+Original bounded local validation is summarized publicly; it is not a claim that public CI rendered Blender scenes or validated Linux. The 0.3.0 target measurement uses Cycles CPU. See [release notes](docs/RELEASE_NOTES.md) and [license scope](docs/LICENSING.md).

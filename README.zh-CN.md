@@ -4,9 +4,9 @@
 
 通过可审查的保存文件 CLI 工作单元，创建、编辑、检查和恢复可编辑的 Blender 灯光方案。
 
-**插件 0.2.2、CLI 快照 0.57.0、打光技能 0.2.0，GPL-3.0-or-later。** Windows 的 Blender 5.3.0 兼容验证覆盖受管灯组创建、独立重开、Cycles 与 EEVEE 静态预览。既有 5.2.1 结果见发布说明。
+**灯光插件 0.3.0、Blender 5.3.0、打光技能 1.1.0，GPL-3.0-or-later。** 按主体曝光、背景保护、主辅光比和画面亮度协调调灯。配合独立的 blenderctl v0.64.0 分发及生产包 1.0.0，参见[生产请求示例](docs/GOAL-LIGHTING.md)。
 
-0.2.1修复禁用受管灯/板冷重开后的检查与模板导出变换读取。四案例正式图仍归0.2.0历史基线，不换成补丁实现身份；详见[发布说明](docs/RELEASE_NOTES.md)。
+此前版本的受管灯组验收见[发布说明](docs/RELEASE_NOTES.md)。
 
 ## 功能和边界
 
@@ -22,9 +22,9 @@
 
 ## 安装与入口
 
-在 Blender 的 **Preferences → Extensions → Install from Disk** 安装 0.2.2 插件 ZIP，随后启用 Lighting Workflow。SHA-256 随版本发布。
+在 Blender 的 **Preferences → Extensions → Install from Disk** 安装 0.3.0 插件 ZIP，随后启用 Lighting Workflow。SHA-256 随版本发布。
 
-克隆或解包本仓以使用匹配CLI。另需Python **3.12+**与Blender；本仓不捆绑二进制。保留原`tools/`目录和全部runtime Python模块的原字节，以保持打光实现身份；其他CLI领域仍有各自依赖和契约，不因随源码打包就变成本发布已验范围。
+本仓随附 CLI 快照 0.57.0，服务以下受管灯组命令。另需Python **3.12+**与Blender；本仓不捆绑二进制。保留原`tools/`目录和全部runtime Python模块的原字节，以保持打光实现身份；其他CLI领域仍有各自依赖和契约，不因随源码打包就变成本发布已验范围。
 
 从checkout运行PowerShell：
 
@@ -46,4 +46,4 @@ $env:BLENDERCTL_PYTHON = '<实际python.exe绝对路径>'
 
 本仓公开插件/runtime源码、Schema、可移植技能说明和发布工具。不公开用户生产资产、私有`.blend`、原案例PNG、原审计JSON、个人配置、WM或私人Wiki。
 
-公开说明摘要来自有边界的本机验证，不代表公开CI已运行Blender或Linux验收。本补丁仅加入已声明的变换读取修复，CLI0.57.0/Schema版本、艺术规范和仓库/运行架构保持，详见[发布说明](docs/RELEASE_NOTES.md)及[许可范围](docs/LICENSING.md)。
+公开说明摘要来自有边界的本机验证，不代表公开CI已运行Blender或Linux验收。0.3.0 的画面目标用 Cycles CPU 测量，详见[发布说明](docs/RELEASE_NOTES.md)及[许可范围](docs/LICENSING.md)。

@@ -2,7 +2,7 @@
 name: blender-lighting
 description: 使用 Lighting Workflow 插件与公共 blenderctl 保留中性基线灯、分析参考光向光比与色温、搭建主光辅光轮廓光与环境 HDRI、对比双引擎画面并用模板批量套用到同场景多镜头。接到资产或镜头的成片布光、灯组微调、跨镜复用或还原灯组任务时使用。
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Blender 灯光制作
@@ -78,6 +78,10 @@ $sha = (Get-FileHash -LiteralPath $src -Algorithm SHA256).Hash.ToLowerInvariant(
    - `power_policy` 显式选 `native`（同尺度直接复用）或 `scale_squared`（按主体尺度比平方缩放非 `SUN` 灯功率，`SUN` 保持原值）。
    - 外部链接对象在 `bindings` 里明确映射，套用后照常出图复核机位反射与暗部。
    - 批量中途中断或部分失败时，等作业进入终态，带上原报告路径与 SHA256 运行 `--resume` 续跑。
+
+## Blender 5.3 画面目标调光
+
+使用 [blenderctl v0.64.0](https://github.com/tsist/blenderctl/releases/tag/v0.64.0) 的 `production.run`，设置 `release: "1.0.0"` 与 `domain: "lighting"`。组合主体相对曝光、背景漂移容差、主辅光比和画面区域亮度。默认只调整点名静态灯的功率。新增 AREA 补光或更改接收链接须分别显式授权。读取 Cycles CPU 同帧测量、保护与回滚回执，再用目标引擎出图检查。[可移植请求示例](references/goal-lighting.md)
 
 ## 交给下游
 

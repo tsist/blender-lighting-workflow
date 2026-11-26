@@ -50,9 +50,11 @@ def verify(root,extension=None):
         ref=identity['extension_archive']
         if sha(extension)!=ref['sha256'] or extension.stat().st_size!=ref['bytes']:raise ValueError('Extension ZIP changed')
         with zipfile.ZipFile(extension) as z:
-            for p in (root/'tools/lighting_workflow_addon').iterdir():
-                if p.is_file() and (p.suffix=='.py' or p.name=='blender_manifest.toml'):
-                    if z.read(p.name)!=p.read_bytes():raise ValueError('Extension member changed: '+p.name)
+            members={p.name:p for p in (root/'tools/lighting_workflow_addon').iterdir()
+                     if p.is_file() and (p.suffix=='.py' or p.name=='blender_manifest.toml')}
+            if sorted(z.namelist())!=sorted(members) or z.testzip() is not None:raise ValueError('Extension member inventory changed')
+            for name,path in members.items():
+                if z.read(name)!=path.read_bytes():raise ValueError('Extension member changed: '+name)
         archive='passed'
     return {'ok':True,'files':len(files),'runtime_files':len(rows),'implementation_sha256':computed,'local_links':links,'private_matches':0,'extension_archive':archive,'scope':'exact allowlist/bytes/finite patterns; no Blender/Linux runtime claim'}
 def main():

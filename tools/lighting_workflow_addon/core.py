@@ -196,6 +196,15 @@ def _light_values(obj, include_links=False):
     return values
 
 
+def _set_light_values(obj, values):
+    for key, value in values.items():
+        if key in LINK_FIELDS: continue
+        if key == 'location': obj.location = value
+        elif key == 'enabled': obj.hide_render = obj.hide_viewport = not value
+        elif key == 'size': setattr(obj.data, 'size' if obj.data.type == 'AREA' else 'shadow_soft_size', value)
+        else: setattr(obj.data, key, value)
+
+
 def _light_structure(obj):
     obj_row, data_row = _record(obj), _record(obj.data)
     # Local translation and supported light fields have independent baselines.
@@ -678,12 +687,7 @@ def _patch(scene, manifest, state):
         board_operations.append((patch, row, obj, desired))
     # All conflicts are checked before any parameter mutation.
     for patch, row, obj, desired in operations:
-        for key, value in desired.items():
-            if key in LINK_FIELDS: continue
-            if key == 'location': obj.location = value
-            elif key == 'enabled': obj.hide_render = obj.hide_viewport = not value
-            elif key == 'size': setattr(obj.data, 'size' if obj.data.type == 'AREA' else 'shadow_soft_size', value)
-            else: setattr(obj.data, key, value)
+        _set_light_values(obj, desired)
         scene.view_layers[manifest['view_layer']].update()
         advanced.configure_links(scene, state, patch['id'], desired)
         observed = _light_values(obj, True)
@@ -882,7 +886,7 @@ def inspect(scene, rig_id=None):
                              'managed': o.get(OWNER)} for o in scene.objects if o.type == 'LIGHT']}
 
 
-def snapshot_protection(scene, excluded_names=()):
+def snapshot_protection(scene, excluded_names=(), *, include_managed=False):
     """Content witnesses; only listed original LIGHT visibility may change."""
     scene = _scene(scene) if isinstance(scene, str) else scene
     bpy = _bpy()
@@ -891,11 +895,9 @@ def snapshot_protection(scene, excluded_names=()):
     # Exempt only IDs enumerated by the active target Scene's state. Owned IDs
     # belonging to another Scene or unrecorded IDs keep full protection.
     managed = set()
-    managed_collections = set()
     for state in _states(scene).values():
         if state.get('source_world'): retained_source_worlds.add(state['source_world'])
         names = {state['collection'], *[r['collection'] for fields in state.get('links', {}).values() for r in fields.values() if r['collection']]}
-        managed_collections.update(names)
         for name in names:
             item = bpy.data.collections.get(name)
             if item and item.get(OWNER) == state['rig_id']: managed.add(item.as_pointer())
@@ -911,7 +913,7 @@ def snapshot_protection(scene, excluded_names=()):
             for tree in (getattr(item, 'node_tree', None), getattr(data, 'node_tree', None)):
                 if tree and tree.get(OWNER) == state['rig_id']: managed.add(tree.as_pointer())
     def exempt(item):
-        return item.as_pointer() in managed
+        return not include_managed and item.as_pointer() in managed
     result = {'version': '1.0', 'scene': scene.name, 'records': {}, 'scene_memberships': {},
               'coverage': 'inspection.record mesh/UV/material/nodes/camera/animation; raw object transforms, collection membership and other-scene World/exposure; not arbitrary plugin side effects'}
     def identity(item):

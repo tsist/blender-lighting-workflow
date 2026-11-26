@@ -1,8 +1,8 @@
 {
-  "plugin_version": "0.2.2",
+  "plugin_version": "0.3.0",
   "cli_version": "0.57.0",
-  "skill_version": "0.2.0",
-  "implementation_sha256": "e72163c8d1304b528ff51049e3f290a5957b48fa0c5c2c163a63a9d893ffdb59",
+  "skill_version": "1.1.0",
+  "implementation_sha256": "2c3f878fa73ebc236635918477d378f9b013f06f636fa977cd783de3dfd0bbd3",
   "runtime_documents": [
     {
       "file": "tools/blenderctl/adaptive_sampling.py",
@@ -614,11 +614,11 @@
     },
     {
       "file": "tools/lighting_workflow_addon/__init__.py",
-      "expected_sha256": "09e725d3e52d09fff202a2a13567fdc0b97f525c99a5f2b9b19faa6e4a5dfa8f"
+      "expected_sha256": "51541f64c9a7e08ac1e0bf70e8a21ca7a98750a401f16102689c4690e77ef34c"
     },
     {
       "file": "tools/lighting_workflow_addon/advanced.py",
-      "expected_sha256": "c42222b43fe1edff7757992bd1fa5b7360e498a671f434c1b0b911b2fcc8a57c"
+      "expected_sha256": "239fae605c27d9242ba62430e4d6f1730606dd02cd107907a0b083bed8327059"
     },
     {
       "file": "tools/lighting_workflow_addon/contract.py",
@@ -626,7 +626,23 @@
     },
     {
       "file": "tools/lighting_workflow_addon/core.py",
-      "expected_sha256": "d764e2a057a67f07d4cb797fc03d8f514c37926ab588463b7c7508ac6bfbb942"
+      "expected_sha256": "94b5616519d7c6df909991afe035fe5ff39113aa143dbc4a3f5b1ae0c4e8e22e"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/goal_contract.py",
+      "expected_sha256": "f905c38d64aa416a0e122f50aa84261a67ce65780947031142b19efa10d6ee7b"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/goal_measure.py",
+      "expected_sha256": "4e5a316b055d5f815db231bec8128ba07df27a872c92c88e5640ca6495b5b52b"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/goal_solver.py",
+      "expected_sha256": "8cc5a17545d6cb268089a6d724992016648819b868d965bc3a7af2cd31a558bf"
+    },
+    {
+      "file": "tools/lighting_workflow_addon/goals.py",
+      "expected_sha256": "220761d83c1317c81f563a08998d6102858b35f8527ece12ed3f48ccbccba247"
     },
     {
       "file": "tools/lighting_workflow_addon/presets.py",
@@ -642,9 +658,14 @@
     }
   ],
   "extension_archive": {
-    "file": "dist/lighting_workflow-0.2.2.zip",
-    "sha256": "24c8d6711967a2bd7ad94ce1a18144bf2b3324311591dcfec32349a8a48f14c8",
-    "bytes": 32198
+    "file": "dist/lighting_workflow-0.3.0.zip",
+    "sha256": "a42c39275237f9060fa9e123049103690cebc8ef5f82fcc71c2f4f9e6a0b7983",
+    "bytes": 43693
   },
-  "source_scope": "All lighting identity runtime files retain original byte content and directory layout; additional existing geometry/material runtime dependencies retain bytes, outside this release validation scope"
+  "source_scope": "All lighting identity runtime files retain original byte content and directory layout; additional existing geometry/material runtime dependencies retain bytes, outside this release validation scope",
+  "production_cli": {
+    "repository": "tsist/blenderctl",
+    "version": "0.64.0",
+    "operation_release": "1.0.0"
+  }
 }

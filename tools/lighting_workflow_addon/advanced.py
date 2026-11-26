@@ -167,12 +167,9 @@ def configure_links(scene, state, light_id, values):
         collection = bpy.data.collections.get(prior['collection']) if prior and prior['collection'] else None
         if refs:
             if collection is None:
-                c._fresh(bpy.data.collections, name)
-                collection = c._mark(bpy.data.collections.new(name), state['rig_id'])
-                collection.use_fake_user = True
-            for member in list(collection.objects): collection.objects.unlink(member)
-            for ref in refs: collection.objects.link(scene.objects[ref])
-            for member in collection.collection_objects: member.light_linking.link_state = mode
+                collection = new_link_collection(scene, name, refs, mode, state['rig_id'])
+            else:
+                _populate_link_collection(scene, collection, refs, mode)
             setattr(obj.light_linking, prop, collection)
             fields[key] = {'collection': collection.name, 'refs': sorted(refs), 'mode': mode,
                            'witness': _link_witness(collection)}
@@ -180,6 +177,28 @@ def configure_links(scene, state, light_id, values):
             setattr(obj.light_linking, prop, None)
             if collection is not None: bpy.data.collections.remove(collection)
             fields[key] = {'collection': None, 'refs': [], 'mode': 'INCLUDE', 'witness': None}
+
+
+def _populate_link_collection(scene, collection, refs, mode):
+    for member in list(collection.objects): collection.objects.unlink(member)
+    for ref in refs: collection.objects.link(scene.objects[ref])
+    for member in collection.collection_objects: member.light_linking.link_state = mode
+
+
+def new_link_collection(scene, name, refs, mode, owner=None):
+    c = _core()
+    collections = c._bpy().data.collections
+    c._fresh(collections, name)
+    collection = collections.new(name)
+    try:
+        if owner:
+            c._mark(collection, owner)
+            collection.use_fake_user = True
+        _populate_link_collection(scene, collection, refs, mode)
+    except Exception:
+        collections.remove(collection)
+        raise
+    return collection
 
 
 def cleanup_links(state):
